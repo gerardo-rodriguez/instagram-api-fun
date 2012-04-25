@@ -1,0 +1,68 @@
+<h2><?php echo $this->designerName ?>&rsquo;s Shopping Basket</h2>
+<?php
+
+if( !empty($this->customSuccessMessages) ) {
+	echo "<ul class='success customMessages'>";
+	foreach( $this->customSuccessMessages as $successMessage ) echo "<li>" . $successMessage . "</li>";
+	echo "</ul>";
+}
+
+if( !empty($this->customErrorMessages) ) {
+	echo "<ul class='error customMessages'>";
+	foreach( $this->customErrorMessages as $error ) echo "<li>" . $error . "</li>";
+	echo "</ul>";
+}
+
+if( count($this->basketItemsDataArr) ) {
+?>
+	<ul class="basketItems">
+	<?php
+	// Zend_Debug::dump($this->basketItemsDataArr);
+	foreach($this->basketItemsDataArr as $basketItem) {
+		{
+		?>
+		<li>
+			<dl>
+				<dt>Make updates to your quantity.</dt>
+				<dd><?php 
+					echo $basketItem['form'];
+				?></dd>
+				<dt>Stock Number:</dt>
+				<dd><?php echo $basketItem['stock_number'] ?></dd>
+			
+				<dt>Description:</dt>
+				<dd><?php echo $basketItem['description'] ?></dd>
+			
+				<?php
+				if( $basketItem['notes'] ) {
+				?>
+				<dt>Notes:</dt>
+				<dd><?php echo $basketItem['notes'] ?></dd>
+				<?php
+				}
+				?>
+
+				<dt>Unit Price:</dt>
+				<dd><?php echo $basketItem['unit_price'] ?></dd>
+
+				<dt>Total Price:</dt>
+				<dd><?php echo $basketItem['total_item_price'] ?></dd>
+			</dl>
+			<p><a href="/designer/item-remove/basketItemID/<?php echo $basketItem['basket_item_id'] ?>">Remove this item from my basket</a></p>
+		</li>
+		<?php
+		}
+		?>
+	<?php
+	}?>
+	</ul>
+	<p>Grand Total: $<?php echo $this->grandTotal ?></p>
+	<p><a href="/designer/submit-order">Place my order</a></p>
+	<p>(You will not be charged by placing your order. Your order will be emailed to Isabella Collection and will reviewed. You will be contacted shortly to complete transaction.)</p>
+<?php
+} else {
+?>
+	<p>You have no items in your Shopping Basket</p>
+<?php	
+}
+?>

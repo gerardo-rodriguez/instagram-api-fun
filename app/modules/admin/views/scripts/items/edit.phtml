@@ -1,0 +1,23 @@
+<p><a href="/admin/collections/view/collectionID/<?php echo $this->collectionDataArr['id'] ?>">&lsaquo; Back to "<?php echo $this->collectionDataArr['name'] ?>"</a></p>
+
+<article>
+	<h3>Collection: "<?php echo $this->collectionDataArr['name'] ?>"</h3>
+	<h3>Item Details</h3>
+	<?php
+
+		if( !empty($this->customSuccessMessages) ) {
+			echo "<ul class='success customMessages'>";
+			foreach( $this->customSuccessMessages as $successMessage ) echo "<li>" . $successMessage . "</li>";
+			echo "</ul>";
+		}
+
+		if( !empty($this->customErrorMessages) ) {
+			echo "<ul class='error customMessages'>";
+			foreach( $this->customErrorMessages as $error ) echo "<li>" . $error . "</li>";
+			echo "</ul>";
+		}
+
+		// show the item form
+		echo $this->itemForm;
+	?>
+</article>

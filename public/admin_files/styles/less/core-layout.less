@@ -1,0 +1,330 @@
+
+/** ------------------------------------ !CORE LAYOUT ------------------------------------*/
+
+::-moz-selection { background: #3c68bb; color: @theme-body-color; text-shadow: none; }
+::selection { background: #3c68bb; color: #fff; text-shadow: none; }
+
+@columns: 12;
+@column-width: 60;
+@gutter-width: 20;
+
+@total-width: 100%;
+
+
+body {
+	font-family: @theme-font-family;
+	font-size: @theme-font-size;
+	line-height: @theme-line-height;
+	
+	h1,h2,h3 {
+		font-weight:normal;
+	}
+	
+	h1 {
+		font-size: 225%;
+	}
+	h2 {
+		font-size: 200%;
+	}
+	h3 {
+		font-size: 175%;
+	}
+	
+	a {
+		&:link,
+		&:visited {
+			color: @theme-inline-link-color;
+			text-decoration:none;
+		}
+
+		&:active,
+		&:hover {
+			color: @theme-inline-link-color;
+		}
+	}
+	
+	button {
+		.button();
+	}
+	
+	header {
+		background:#e9e9e9;
+		padding:10px 0 0;
+		color:#333;
+		text-align:center;
+		display:block;
+		
+		nav {
+			background:#333;
+			padding:10px;
+			
+			ul {
+
+				li {
+					display:inline-block;
+					border-left:1px solid #666;
+					
+					&:first-child {
+						border:none;
+					}
+				
+					a {
+						padding:0 15px;
+						
+						&:link,
+						&:visited {
+							color:#fff;
+							text-decoration:none;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	& > section {
+		width: 960px;
+		margin: 0 auto;
+		
+		.listingContainer {
+			font-size:12px;
+			
+			table {
+/*				border:1px solid #d1d1d1;*/
+				width:100%;
+				
+				th, td {
+					padding:5px 10px;
+					border-left:1px solid #d1d1d1;
+					
+					&:first-child,
+					&:last-child {
+						border-left:none;
+					}
+				}
+				
+				thead {
+					tr {
+						background:#e8e8e8;
+						
+						th {
+							text-transform:capitalize;
+							font-weight: bold;
+							
+							&.descriptive {
+								width:150px;
+							}
+						}
+					}
+				}
+				tbody {
+					tr {
+						&:nth-child(2n) {
+							background:#f5f5f5;
+						}
+						td {
+							text-align:center;
+							
+							&.textContent {
+								text-align:left;
+							}
+						}
+					}
+				}
+			}
+			
+			&.itemsContainer {
+				table {
+					td {
+						&:first-child {
+							width:65px;
+						}
+					}
+				}
+			}
+			
+			&.collectionsContainer {
+				table {
+					th, td {
+						&:nth-last-child(-n+2) {
+							border-left:none;
+						}
+					}
+					td {
+						&:first-child {
+							text-align:left;
+						}
+					}
+				}
+			}
+
+			&.designersContainer {
+				table {
+					th, td {
+						&:first-child {
+							width:100px;
+						}
+						&:last-child {
+							border-left:1px solid #d1d1d1;
+							width:75px;
+						}
+					}
+				}
+			}
+		}
+		
+		article {
+			background:#fff;
+			border:1px solid #cdcdcd;
+			padding:0 20px 20px;
+			margin: 10px 0;
+			position:relative;
+			.rounded-corners();
+			.box-shadow();
+
+			&.formContainer {
+				background:#f0f0f0;
+			}
+			
+			a {
+				&:link,
+				&:visited,
+				&:hover,
+				&:active{
+					.button();
+				}
+				
+				&.positive{
+					.positiveButtonScheme();
+				}
+				&.negative {
+					.negativeButtonScheme();
+				}
+			}
+			
+			.viewDetails {
+/*				padding:0px;*/
+				
+				dt {
+					color:#747474;
+				}
+
+				dd {
+					color:#000;
+					font-weight:bold;
+					text-transform:uppercase;
+					margin: 0 0 15px 0;
+
+					h3 {
+						margin:0;
+					}
+				}
+				
+				&.userDetails,
+				&.designerDetails {
+
+					dd {
+						text-transform:none;
+
+						&.status {
+							text-transform:uppercase;
+						}
+					}
+				}
+				
+				ul {
+					padding-left:0;
+					
+					&.buttonCollection {
+						li {
+							list-style-type: none;
+							float:left;
+							margin-left:10px;
+							
+							&:first-child {
+								margin-left:0;
+							}
+						}
+					}
+				}
+			}
+			
+			.customMessages,
+			.errors {
+				font-size:110%;
+				padding:10px;
+				
+				&.error {
+					background:red;
+					color:#fff;
+				}
+				
+				&.success {
+					background:green;
+					color:#fff;
+				}
+				
+				li {
+					list-style-type: none;
+				}
+			}
+			.errors {
+				background:red;
+				color:#fff;
+			}
+			
+			.zend_form {
+				dt,dd {
+					display:block;
+					margin:5px 0;
+				}
+				dt {
+				}
+				
+				dd {
+					
+					input,
+					textarea {
+						font-size:125%;
+						color:#5a5a5a;
+						padding:15px;
+						border:1px solid #99b1bd;
+						.rounded-corners(5px,5px,5px,5px);
+						.inset-box-shadow(0,0);
+						width:95%;
+					}
+					
+					textarea {
+						height:200px
+					}
+				}
+			}
+		}
+	}
+	
+	footer {
+		text-align:center;
+	}
+}
+
+
+
+/* !Clearfix */
+/* Use this to clear floats */
+nav ul:after,
+.buttonCollection:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+/* IE6 */ 
+* html nav ul,
+* html .buttonCollection {
+	height: 1%;
+}/* IE7 */
+*:first-child+html nav ul,
+*:first-child+html .buttonCollection {
+	min-height: 1px;
+}

@@ -1,0 +1,67 @@
+<?php
+// calculate the amount of items in the basket
+$totalItems = 0;
+
+if( count($this->basketItemsDataArr) ) {
+	foreach( $this->basketItemsDataArr as $basketItem )
+		$totalItems+= (int)$basketItem['quantity'];
+}
+?>
+<div class="shoppingBasketContainer">
+	<h4>Shopping Basket</h4>
+	<p>You have <strong><?php echo $totalItems ?></strong> items in your basket.
+	<p><a href="/designer/view-basket/">View Basket</a></p>
+</div>
+
+<?php $collection = $this->collectionDataArr ?>
+
+<h2>See the collection details and items in this collection</h2>
+<h3>&ldquo;<?php echo $collection['name'] ?>&rdquo;</h3>
+<img src="/app_files/img/collections/<?php echo $collection['full_filename'] ?>" width="700" alt="<?php echo $collection['name'] ?>" />
+<h3>Items in this collection</h3>
+	<?php
+	if( count($this->itemsDataArr) )
+	{
+	?>
+	<p>Total Collections: <?php echo count($this->itemsDataArr) ?>
+	<ul class="collectionItems">
+		<?php
+		foreach( $this->itemsDataArr as $item )
+		{
+		?>
+		<li>
+			<dl>
+				<dt>Photo Refernce:</dt>
+				<dd><?php echo $item['photo_reference'] ?></dd>
+			
+				<dt>Stock Number:</dt>
+				<dd><?php echo $item['stock_number'] ?></dd>
+			
+				<dt>Description:</dt>
+				<dd><?php echo $item['description'] ?></dd>
+			
+				<?php
+				if( $item['notes'] ) {
+				?>
+				<dt>Notes:</dt>
+				<dd><?php echo $item['notes'] ?></dd>
+				<?php
+				}
+				?>
+
+				<dt>Unit Price:</dt>
+				<dd><?php echo $item['unit_price'] ?></dd>
+			</dl>
+			<a href="/designer/add-item-to-basket/itemID/<?php echo $item['id'] ?>/collectionID/<?php echo $collection['id'] ?>">Add Item to Basket</a>
+		</li>
+		<?php
+		}
+		?>
+	</ul>
+	<?php
+	} else {
+	?>
+	<p>There are no items in this collection at this moment.</p>
+	<?php
+	}
+	?>

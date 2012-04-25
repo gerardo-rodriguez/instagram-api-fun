@@ -1,0 +1,55 @@
+/** ------------------------------------ !MIXINS --------------------------------------------
+* Reusable mixins, these classes are intended to be used within lESS and not directly attached to the markup
+*/
+
+.rounded-corners(@radius1: @theme-border-radius, @radius2: @theme-border-radius, @radius3: @theme-border-radius, @radius4: @theme-border-radius) {
+	-moz-border-radius: @radius1 @radius2 @radius3 @radius4;
+	-webkit-border-radius: @radius1 @radius2 @radius3 @radius4;
+	border-radius: @radius1 @radius2 @radius3 @radius4;
+	//.piehtcBehavior();
+}
+.box-shadow(@x: 0px, @y: 0px, @size: @theme-box-shadow-size, @color: @theme-box-shadow-color) {
+	-moz-box-shadow: 		@x @y @size @color;
+	-webkit-box-shadow: 	@x @y @size @color;
+	box-shadow: 			@x @y @size @color;
+/*	.piehtcBehavior();*/
+}
+.inset-box-shadow(@x: 0px, @y: 0px, @size: @theme-inset-box-shadow-size, @color: @theme-inset-box-shadow-color) {
+	-moz-box-shadow: 		inset @x @y @size @color;
+	-webkit-box-shadow: 	inset @x @y @size @color;
+	box-shadow: 			inset @x @y @size @color;
+}
+.opacity(@opacity:100) {
+	opacity: (@opacity/100);
+	filter:alpha(opacity=@opacity); /* For IE8 and earlier */
+}
+.constrain(@width: 960px) {
+	display: block;
+	width: @width;
+	margin: 0 auto;
+}
+.piehtcBehavior(@filepath: 'pie/PIE.htc') {
+	behavior: url(@filepath);
+}
+
+.button() {
+	border:2px solid #70B1DE;
+	background:#0E5D95;
+	color:#fff;
+	padding:5px 15px;
+	.rounded-corners(5px,5px,5px,5px);
+	text-decoration:none;
+	display:inline-block;
+	text-transform:capitalize;
+	line-height:1.5;
+}
+
+.positiveButtonScheme() {
+	background-color:#52a558;
+	border-color:#437647;
+}
+
+.negativeButtonScheme() {
+	background-color:#db1a1a;
+	border-color:#b20000;
+}

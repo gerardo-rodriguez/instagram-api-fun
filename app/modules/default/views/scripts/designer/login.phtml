@@ -1,0 +1,26 @@
+<h1>Welcome!</h1>
+<div class="formContainer">
+	<div class="col">
+		<h2>Already a Member?</h2>
+		<p>Simply log in below.</p>
+		<?php
+			if( !empty($this->customSuccessMessages) ) {
+				echo "<ul class='success customMessages'>";
+				foreach( $this->customSuccessMessages as $successMessage ) echo "<li>" . $successMessage . "</li>";
+				echo "</ul>";
+			}
+
+			if( !empty($this->customErrorMessages) ) {
+				echo "<ul class='error customMessages'>";
+				foreach( $this->customErrorMessages as $error ) echo "<li>" . $error . "</li>";
+				echo "</ul>";
+			}
+			
+			echo $this->loginForm;
+		?>
+	</div>
+	<div class="col">
+		<h2>Need to apply as a Designer?</h2>
+		<p>Take a moment to <a href="/designer/apply/">apply as a Designer</a></p>
+	</div>
+</div>

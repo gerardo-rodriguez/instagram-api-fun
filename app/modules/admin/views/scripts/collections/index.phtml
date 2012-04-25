@@ -1,0 +1,87 @@
+<!-- <h2>Collections</h2> -->
+<article class="formContainer">
+	<h3>Add a new collection</h3>
+	<?php 
+		if( !empty($this->customSuccessMessages) ) {
+			echo "<ul class='success customMessages'>";
+			foreach( $this->customSuccessMessages as $successMessage ) echo "<li>" . $successMessage . "</li>";
+			echo "</ul>";
+		}
+
+		if( !empty($this->customErrorMessages) ) {
+			echo "<ul class='error customMessages'>";
+			foreach( $this->customErrorMessages as $error ) echo "<li>" . $error . "</li>";
+			echo "</ul>";
+		}
+
+		echo $this->addCollectionForm;
+	?>
+</article>
+
+<article class="listingContainer collectionsContainer">
+	<h3>Current Collections (<?php echo count($this->collectionDataArr) ?>)</h3>
+	<?php if(!empty($this->collectionDataArr)) { ?>
+	<table>
+		<thead>
+			<tr>
+				<th>collection name</th>
+				<th>created on</th>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<!-- <th>&nbsp;</th> -->
+			</tr>
+		</thead>
+		<tbody>
+			<?php
+		
+			foreach( $this->collectionDataArr as $collection ) {
+				echo "\n\t\t<tr>";
+				echo "\n\t\t\t<td>" . $collection['name'] . "</td>";
+				echo "\n\t\t\t<td>" . $collection['create_date'] . "</td>";
+				echo "\n\t\t\t<td><a href='/admin/collections/view/collectionID/" . $collection['id'] . "'>view / edit collection</a></td>";
+				echo "\n\t\t\t<td><a href='/admin/collections/archive/collectionID/" . $collection['id'] . "'>archive collection</a></td>";
+				// echo "\n\t\t\t<td><a href='/admin/collections/delete/collectionID/" . $collection['id'] . "'>delete</a></td>";
+				echo "\n\t\t</tr>";
+			}
+		
+			?>
+		</tbody>
+	</table>
+	<?php } else { ?>
+		<p>No collections found.</p>
+	<?php } ?>
+
+	<h3>Archived Collections (<?php echo count($this->archivedCollectionDataArr) ?>)</h3>
+	<?php if(!empty($this->archivedCollectionDataArr)) { ?>
+	<table>
+		<thead>
+			<tr>
+				<th>collection name</th>
+				<th>created on</th>
+				<th>archived on</th>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php
+		
+			foreach( $this->archivedCollectionDataArr as $collection ) {
+				echo "\n\t\t<tr>";
+				echo "\n\t\t\t<td>" . $collection['name'] . "</td>";
+				echo "\n\t\t\t<td>" . $collection['create_date'] . "</td>";
+				echo "\n\t\t\t<td>" . $collection['archive_date'] . "</td>";
+				echo "\n\t\t\t<td><a href='/admin/collections/view/collectionID/" . $collection['id'] . "'>view collection</a></td>";
+				echo "\n\t\t\t<td><a class='positive' href='/admin/collections/unarchive/collectionID/" . $collection['id'] . "'>unarchive collection</a></td>";
+				echo "\n\t\t\t<td><a class='negative' href='/admin/collections/delete/collectionID/" . $collection['id'] . "'>delete collection</a></td>";
+				echo "\n\t\t</tr>";
+			}
+		
+			?>
+		</tbody>
+	</table>
+	<?php } else { ?>
+		<p>You have not archived any collections.</p>
+	<?php } ?>
+</article>

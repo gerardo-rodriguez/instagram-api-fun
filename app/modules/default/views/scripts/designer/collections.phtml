@@ -1,0 +1,48 @@
+<?php
+// calculate the amount of items in the basket
+$totalItems = 0;
+
+if( count($this->basketItemsDataArr) ) {
+	foreach( $this->basketItemsDataArr as $basketItem )
+		$totalItems+= (int)$basketItem['quantity'];
+}
+?>
+<div class="shoppingBasketContainer">
+	<h4>Shopping Basket</h4>
+	<p>You have <strong><?php echo $totalItems ?></strong> items in your basket.
+	<p><a href="/designer/view-basket/">View Basket</a></p>
+</div>
+
+<h2>These are the collections</h2>
+<div class="collectionsContainer">
+	<?php
+	if( count($this->collectionsDataArr) )
+	{
+	?>
+	<p>Total Collections: <?php echo count($this->collectionsDataArr) ?>
+	<ul class="collections">
+		<?php
+		foreach( $this->collectionsDataArr as $collection )
+		{
+		?>
+		<li>
+			<span class="imageContainer">
+				<a href="/designer/view-collection/collectionID/<?php echo $collection['id'] ?>">
+					<img src="/app_files/img/collections/<?php echo $collection['thumb_filename'] ?>" width="100" alt="<?php echo $collection['name'] ?>" />
+				</a>
+			</span>
+			<h4><?php echo $collection['name'] ?></h4>
+			<a href="/designer/view-collection/collectionID/<?php echo $collection['id'] ?>">View Collection</a>
+		</li>
+		<?php
+		}
+		?>
+	</ul>
+	<?php
+	} else {
+	?>
+	<p>There are no collections at this moment.</p>
+	<?php
+	}
+	?>
+</div>

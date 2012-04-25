@@ -1,0 +1,176 @@
+/** ------------------------------------ !CORE LAYOUT ------------------------------------*/
+
+::-moz-selection { background: #3c68bb; color: @theme-body-color; text-shadow: none; }
+::selection { background: #3c68bb; color: #fff; text-shadow: none; }
+
+body {
+	font-family: Verdana, Helvetica, "sans-serif";
+	font-size: 11px;
+	background:#9d967b;
+	
+	button {
+		border:1px solid #000;
+		background:#999;
+		color:#fff;
+		padding:5px 10px;
+	}
+
+	#wrapper {
+		width: 900px;
+		margin: 0 auto;
+		
+		.col {
+			float:left;
+		}
+		
+		.zend_form {
+			dd {
+				margin-left:0;
+			}
+			
+			.errors {
+				padding-left:0;
+				
+				li {
+					background:red;
+					color:#fff;
+					padding:5px;
+					border:none;
+				}
+			}
+		}
+		
+		.shoppingBasketContainer {
+			padding:5px 10px;
+			border:1px solid #000;
+			background:#fff;
+		}
+		
+		.formContainer {
+			width:600px;
+			margin: 0 auto;
+			border:2px solid #333;
+			padding: 0 20px;
+			background:#fff;
+			
+			.col {
+/*				margin-left:50px;*/
+				width:50%;
+				
+				&:first-child {
+					margin-left:0;
+				}
+			}
+			
+			.customMessages,
+			.errors {
+				font-size:110%;
+				padding:10px;
+				
+				&.error {
+					background:red;
+					color:#fff;
+				}
+				
+				&.success {
+					background:green;
+					color:#fff;
+				}
+				
+				li {
+					list-style-type: none;
+				}
+			}
+			.errors {
+				background:red;
+				color:#fff;
+			}
+		}
+		
+		.collectionsContainer {
+			.collections {
+				padding-left:0;
+				
+				li {
+					list-style-type:none;
+					width: 100px;
+					background:#fff;
+					border:1px solid #000;
+					padding:20px;
+					float:left;
+/*					height:150px;*/
+					
+					.imageContainer {
+						display:block;
+						height:100px;
+						width:100px;
+						text-align:center;
+					}
+				}
+			}
+		}
+		
+		.collectionItems {
+			padding-left:0;
+			
+			li {
+				list-style-type:none;
+				border:1px solid #000;
+				background:#fff;
+				padding:20px;
+				margin-bottom:5px;
+			}
+		}
+
+		.basketItems {
+			padding-left:0;
+			
+			li {
+				list-style-type:none;
+				border:1px solid #000;
+				background:#fff;
+				padding:20px;
+				margin-bottom:5px;
+				
+				.itemUpdateNav {
+					padding-left:0;
+					margin-top:0;
+					
+					li {
+						float:left;
+						padding:0;
+						margin:0;
+						
+						a {
+							padding:5px;
+							display:block;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+/* !Clearfix */
+/* Use this to clear floats */
+#wrapper .itemUpdateNav:after,
+#wrapper .formContainer:after,
+#wrapper .collections:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+/* IE6 */ 
+* html #wrapper .formContainer,
+* html #wrapper .collections {
+	height: 1%;
+}/* IE7 */
+*:first-child+html #wrapper .formContainer,
+*:first-child+html #wrapper .collections {
+	min-height: 1px;
+}
