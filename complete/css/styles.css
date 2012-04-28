@@ -1,0 +1,92 @@
+::-moz-selection { background: #b3d4fc; text-shadow: none; }
+::selection { background: #b3d4fc; text-shadow: none; }
+
+.loadingAnimation {
+	display:block;
+	width: 80px;
+	margin: 0 auto;
+}
+
+html {
+	color: #333;
+	font-size: 13px;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+button {
+	background: #f26d0a;
+	color: #fff;
+	padding: 10px 30px;
+	border: 2px solid #FFFFFF;
+	text-shadow: 1px 1px 1px #475368;
+	font-size: 18px;
+	line-height: 18px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px 5px #ccc;
+}
+
+header {
+	text-align: center;
+	padding: 5px;
+	border-top: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+	background: #475368;
+	-moz-box-shadow: 0px 3px 12px 6px #ccc;
+	-webkit-box-shadow: 0px 3px 12px 6px #ccc;
+	box-shadow: 0px 3px 12px 6px #ccc;
+}
+	header h1 {
+		color: #fff;
+		font-weight: normal;
+		font-size: 30px;
+		letter-spacing: -1px;
+		font-family: Georgia, serif;
+		text-shadow: 1px 1px 1px #000, 0px 0px 3px #fff;
+	}
+
+section {
+	padding: 30px 30px 80px;
+	border-top: 1px solid #ababab;
+	text-align: center;
+}
+	section .instagramContainer {
+		/* DEMO: LET'S STYLE THE CONTAINER OF ALL THE IMAGES! */
+		padding: 0;
+		width: 726px;
+		margin: 0 auto;
+	}
+		section .instagramContainer li {
+			/* DEMO: LET'S STYLE THE SINGLE IMAGE CONTAINERS! */
+			list-style-type: none;
+			float: left;
+			background: #efefef;
+			border: 1px solid #fff;
+			padding: 10px;
+			margin: 10px;
+			-moz-box-shadow: 3px 3px 12px 6px #ccc;
+			-webkit-box-shadow: 3px 3px 12px 6px #ccc;
+			box-shadow: 3px 3px 12px 6px #ccc;
+		}
+
+			section .instagramContainer li img {
+				/* DEMO: LET'S STYLE UP THE IMG TAG */
+				width: 200px;
+				display: block;
+			}
+			
+			section button {
+				margin: 20px 0;
+			}
+			
+
+
+/* !CLEARFIX */
+section ul.instagramContainer:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
