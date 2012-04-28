@@ -32,7 +32,7 @@ function InstagramViewController() {
 	// Properties
 	//-------------------------------------------------
 	this.clientID = '8f2d5174acd2443aa8f6bb55f64c10fc';
-	this.photoTag = 'pdxputtputt'; // DEMO: LET'S DROP IN THE  '#pdxybb2012' TAG TO FIND THE PHOTOS ON INSTAGRAM!
+	this.photoTag = ''; // DEMO: LET'S DROP IN THE  '#pdxybb2012' TAG TO FIND THE PHOTOS ON INSTAGRAM!
 	this.nextURL;
 	//-------------------------------------------------
 	// Faux Constructor Init
