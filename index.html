@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  <title></title>
+ 	<head>
+ 		<title>Portland Youth Bridge Builders 2012 - Instagram API Fun</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
-  <meta charset="utf-8">
+		<meta charset="utf-8">
+		<!-- Mobile viewport optimized: h5bp.com/viewport -->
+		<meta name="viewport" content="width=device-width">
 
-  <link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/colorbox/colorbox.css" />
+		<link rel="stylesheet" href="css/styles.css" />
 
-  </head>
+		<!-- All JavaScript at the bottom, except this Modernizr build.
+		Modernizr enables HTML5 elements & feature detects for optimal performance.
+		Create your own custom Modernizr build: www.modernizr.com/download/ -->
+		<script src="js/vendor/modernizr-2.5.3.min.js"></script>
+ 	</head>
 
-  <body>
+	<body>
+		<header>
+			<h1>Portland Youth Bridge Builders 2012 - Instagram API Fun!</h1>
+		</header>
 	
-	<h1>Instagram API Fun! :D</h1>
-	<div class="instagramContainer"></div>
-	<a id="more" href="#">More!</a>
-	
-	<script src="js/libs/jquery-1.7.2.min.js"></script>
-	<script src="js/libs/jquery.instagram.js"></script>
+		<section>
+			<ul class="instagramContainer"></ul>
+			<img class="loadingAnimation" src="img/loading.gif" alt="Loading..." />
+			<button id="more" href="#">Load more photos!</button>
+		</section>
 
-	<script src="js/app.js"></script>
-  </body>
+		<!-- JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom -->
+		<script src="js/libs/jquery-1.7.2.min.js"></script>
+		<script src="js/libs/jquery.colorbox-min.js"></script>
+		<script src="js/app.js"></script>
+ 	</body>
 
 </html>
 
