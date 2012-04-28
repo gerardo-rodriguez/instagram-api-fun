@@ -28,7 +28,6 @@ button {
 }
 
 header {
-	font-family: Georgia, serif;
 	text-align: center;
 	padding: 5px;
 	border-top: 2px solid #fff;
@@ -43,7 +42,7 @@ header {
 		font-weight: normal;
 		font-size: 30px;
 		letter-spacing: -1px;
-/*		font-family: Georgia, serif;*/
+		font-family: Georgia, serif;
 		text-shadow: 1px 1px 1px #000, 0px 0px 3px #fff;
 	}
 
@@ -53,25 +52,34 @@ section {
 	text-align: center;
 }
 	section .instagramContainer {
+		/* DEMO: LET'S STYLE THE CONTAINER OF ALL THE IMAGES! */
+/*
 		padding: 0;
-		width: 720px;
+		width: 726px;
 		margin: 0 auto;
+*/
 	}
 		section .instagramContainer li {
-			display: inline-block;
+			/* DEMO: LET'S STYLE THE SINGLE IMAGE CONTAINERS! */
+/*
 			list-style-type: none;
 			float: left;
 			background: #efefef;
+			border: 1px solid #fff;
 			padding: 10px;
 			margin: 10px;
 			-moz-box-shadow: 3px 3px 12px 6px #ccc;
 			-webkit-box-shadow: 3px 3px 12px 6px #ccc;
 			box-shadow: 3px 3px 12px 6px #ccc;
+*/
 		}
 
 			section .instagramContainer li img {
-				display: block;
+				/* DEMO: LET'S STYLE UP THE IMG TAG */
+/*
 				width: 200px;
+				display: block;
+*/
 			}
 			
 			section button {
