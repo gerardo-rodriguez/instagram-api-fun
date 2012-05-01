@@ -5,10 +5,8 @@
 // Let's load photos, once the DOM has loaded.
 $(function(){
 	// DEMO: LET'S LOAD THE PHOTOS!! ;)
-	/*
 	var instagramController = new InstagramViewController(); // Create a new instance of our controller.
 	instagramController.loadPhotos(); // Call the loadPhotos method to load some photos! :D
-	*/
 });
 
 
@@ -32,7 +30,7 @@ function InstagramViewController() {
 	// Properties
 	//-------------------------------------------------
 	this.clientID = '8f2d5174acd2443aa8f6bb55f64c10fc';
-	this.photoTag = ''; // DEMO: LET'S DROP IN THE  '#pdxybb2012' TAG TO FIND THE PHOTOS ON INSTAGRAM!
+	this.photoTag = 'pdxybb2012'; // DEMO: LET'S DROP IN THE  '#pdxybb2012' TAG TO FIND THE PHOTOS ON INSTAGRAM!
 	this.nextURL;
 	//-------------------------------------------------
 	// Faux Constructor Init
@@ -102,9 +100,7 @@ InstagramViewController.prototype = {
 			},
 			success: function(data, textStatus, jqXHR) {
 				// DEMO: LET'S WRITE THE CODE TO RENDER OUR VIEW IF THE AJAX REQUEST WAS SUCCESSFUL! :)
-				/*
 				self.renderView(data);
-				*/
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
 				alert("Error " + textStatus + " " + errorThrown);
